@@ -2,12 +2,12 @@
 
 **Project Design:**
 
-![project-deployment-design](../images/Project-design.jpg)
+![project-deployment-design](images/Project-design.jpg)
 
 This deployment consists of Both multi-stage docker containers and multiple services.
 
 **Client:** Client directory contains the files for the website "frontend" built on angular work.
-The dockerfile for the frontend is located at [client-dockerfilw](client/Dockerfile)
+The dockerfile for the frontend is located at [client-dockerfile](client/Dockerfile)
 
 **javaapi:** This is the backend part of the application, and it is built with java and depends on the emartdb (MYSQL)
 
@@ -23,17 +23,17 @@ These images will be pulled down and respective docker containers will be create
 ```markdown
 docker compose up
 ```
-```markdown
 docker compose build -d
-``` will be run to build the image for client, nodeapi and javaapi.
 
-![containe-runningrs](../images/container-running.png)
+The above will be run to build the image for client, nodeapi and javaapi.
+
+![containe-runningrs](images/container-running.png)
 
 The following microservices will be created (client, javaapi, nodeapi, nginx, mongodb and mysqldb).
 Note that the docker engine runs on aws ec2 instance, with http port 80 open on the ec2 security group.
 
 The webpage is shown below:
 
-![Emart-webpage](../images/mullti-stage-docker.png)
+![Emart-webpage](images/mullti-stage-docker.png)
 
 
